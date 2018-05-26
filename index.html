@@ -8,19 +8,29 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
   <title>Melp</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/icon/melp.ico">
 </head>
 <body>
   <section class="row">
     <section class="col-12 col-sm-12 col-md-12 text-center">
-      <img src="assets/images/melp-logo.png" alt="">
+      <img src="assets/images/melp-logo.png" alt="melp-logo">
     </section>
   </section>
   
   <section class="container">
     <div class="row">
       <div class="d-flex justify-content-end col-12 col-sm-12 col-md-12">
-        <button type="button" class="btn btn-sm order-alphabe">A-Z</button>
-        <button type="button" class="btn btn-sm order-rating">Rating ▼</button>
+          <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownOrder" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Order by...
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item ordering" href="">A-Z</a>
+                <a class="dropdown-item ordering" href="">Z-A</a>
+                <a class="dropdown-item ordering" href="">Rating ▼</a>
+                <a class="dropdown-item ordering" href="">Rating ▼</a>                
+              </div>
+            </div>
       </div>
     </div>
     <section class="row">    

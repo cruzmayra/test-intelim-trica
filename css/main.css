@@ -1,21 +1,42 @@
-/* .feature-container {
-} */
+html {
+  font-size: 1rem;
+}
+
 body > section.row > section > img {
+  /* width: 20%; */
   margin: 3% 0;
 }
 
-body > section > div > div > button {
+#dropdownOrder {
   background: #DA3743;
   color: #fff;
-  margin-left: 1%;
 }
 
 #restaurants-container > li img {
   margin-right: 3%;
+  height: auto;
   width: 45%;
 }
 
 #restaurants-container > li button {
   background: #1C627A;
   color: #fff;
+}
+
+@media (min-width: 576px){
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px){
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1200px){
+  html {
+    font-size: 1rem;
+  }
 }

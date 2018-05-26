@@ -1,7 +1,6 @@
 window.onload = () => {
   getRestaurantsData();
-  document.querySelector('.order-alphabe').addEventListener('click', alphabeticalOrder);
-  document.querySelector('.order-rating').addEventListener('click', ratingOrder);
+  document.querySelector('.ordering').addEventListener('click', chooseOrder);
  }
 
 //function that gets all the data
@@ -25,7 +24,7 @@ const paintData = (data) => {
   return data.forEach(restaurant => {
     let templateRestaurant = '';
     templateRestaurant += `<li class="list-group-item d-flex flex-row">
-    <img src="http://lorempixel.com/400/200/food/" alt="">
+    <img class="img-fluid" src="http://lorempixel.com/400/200/food/" alt="img-menu-restaurant">
     <div class="feature-container">  
       <p>${restaurant.name}</p>
       <p>Rating <span>${restaurant.rating}</span></p>
@@ -38,24 +37,15 @@ const paintData = (data) => {
   }) 
 }
 
-const alphabeticalOrder = e => {
+const chooseOrder = e => {
   e.preventDefault();
   if(e.target.textContent === 'A-Z'){
-    e.target.textContent = 'Z-A'
     descendingOrder('name')
-  } else {
-    e.target.textContent = 'A-Z'
+  } else if (e.target.textContent === 'A-Z') {
     ascendingOrder('name')
-  }
-}
-
-const ratingOrder = e => {
-  e.preventDefault();
-  if(e.target.textContent === 'Rating ▼'){
-    e.target.textContent = 'Rating ▲'
+  } else if (e.target.textContent === 'Rating ▼') {
     descendingOrder('rating')
-  } else {
-    e.target.textContent = 'Rating ▼'
+  } else if (e.target.textContent === 'Rating ▲') {
     ascendingOrder('rating')
   }
 }
