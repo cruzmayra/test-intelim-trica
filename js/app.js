@@ -30,7 +30,7 @@ const paintData = (data) => {
       <p>${restaurant.name}</p>
       <p>Rating <span>${restaurant.rating}</span></p>
       <p>${restaurant.address.city}</p>
-      <button type="button" class="btn btn-outline-primary">More...</button>
+      <button type="button" class="btn ">More...</button>
     </div>
   </li>`;
 

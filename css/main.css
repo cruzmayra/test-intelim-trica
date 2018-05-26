@@ -1,10 +1,21 @@
 /* .feature-container {
 } */
+body > section.row > section > img {
+  margin: 3% 0;
+}
+
 body > section > div > div > button {
-  margin: 0 1%;
+  background: #DA3743;
+  color: #fff;
+  margin-left: 1%;
 }
 
 #restaurants-container > li img {
   margin-right: 3%;
   width: 45%;
+}
+
+#restaurants-container > li button {
+  background: #1C627A;
+  color: #fff;
 }
