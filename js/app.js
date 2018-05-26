@@ -36,7 +36,7 @@ const paintData = (data) => {
     
     let templateRestaurant = '';
     templateRestaurant += `<li class="list-group-item d-flex flex-row">
-       <img class="img-fluid" src="http://lorempixel.com/400/200/food/" alt="img-menu-restaurant">
+       <img class="img-fluid" src="assets/images/elli-o-65548-unsplash-compressor.jpg" alt="img-menu-restaurant">
        <div class="feature-container">  
          <p class="restaurant-name">${restaurant.name}</p>
          <p class="rating-stars">${templateStar}</p>
