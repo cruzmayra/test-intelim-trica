@@ -23,7 +23,8 @@ body > section.row > section > img {
   margin: 0%;
 }
 
-#restaurants-container > li> div > p.rating-stars {
+#restaurants-container > li> div > p.rating-stars,
+#restaurant-modal > div > div > div.modal-body > h5 > i {
  color: #DA3743;
  font-weight: 500;
 }
@@ -32,6 +33,15 @@ body > section.row > section > img {
   background: #1C627A;
   color: #fff;
 }
+
+#restaurant-modal > div > div > div.modal-body > p > i {
+  color: #1C627A;
+}
+
+#map {
+  min-height: 250px;
+  width: 100%;
+ }
 
 @media (min-width: 576px){
   html {
