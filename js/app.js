@@ -1,6 +1,7 @@
 window.onload = () => {
   getRestaurantsData();
-  $('.order-alphabe').click(orderAlphabetically)
+  document.querySelector('.order-alphabe').addEventListener('click', alphabeticalOrder);
+  document.querySelector('.order-rating').addEventListener('click', ratingOrder);
  }
 
 //function that gets all the data
@@ -34,12 +35,42 @@ const paintData = (data) => {
   }) 
 }
 
-//function that order restaurants alphabetically
-const orderAlphabetically = () => {
+const alphabeticalOrder = e => {
+  e.preventDefault();
+  if(e.target.textContent === 'A-Z'){
+    e.target.textContent = 'Z-A'
+    descendingOrder('name')
+  } else {
+    e.target.textContent = 'A-Z'
+    ascendingOrder('name')
+  }
+}
+
+const ratingOrder = e => {
+  e.preventDefault();
+  if(e.target.textContent === 'Rating ▼'){
+    e.target.textContent = 'Rating ▲'
+    descendingOrder('rating')
+  } else {
+    e.target.textContent = 'Rating ▼'
+    ascendingOrder('rating')
+  }
+}
+
+//function that orders descending
+const descendingOrder = (key) => {
   let restaurants = JSON.parse(localStorage.getItem('melp-data'))
   .sort(function(a, b){
-    return (a.name === b.name) ? 0 : (a.name > b.name) ? 1 : -1;
-  })
+    return (a[key] === b[key]) ? 0 : (a[key] > b[key]) ? 1 : -1;
+  })  
   paintData(restaurants)
 }
 
+//function that orders ascending
+const ascendingOrder = (key) => {
+  let restaurants = JSON.parse(localStorage.getItem('melp-data'))
+  .sort(function(a, b){
+    return (a[key] === b[key]) ? 0 : (a[key] < b[key]) ? 1 : -1;
+  })  
+  paintData(restaurants)
+}
