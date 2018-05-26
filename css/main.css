@@ -14,7 +14,7 @@ body > section.row > section > img {
 
 #restaurants-container > li img {
   margin: 0% 3% 1% 0%;
-  height: auto;
+  height: 15rem;
   width: 45%;
 }
 
@@ -43,13 +43,23 @@ body > section.row > section > img {
   width: 100%;
  }
 
-@media (min-width: 576px){
+@media (max-width: 576px){
   html {
     font-size: 1.2rem;
   }
+
+  #restaurants-container > li img {
+    height: 10rem;
+    width: 55%;
+  }
+
+  #dropdownOrder {
+    margin: 20% 0;
+  }
+  
 }
 
-@media (min-width: 992px){
+@media (max-width: 992px){
   html {
     font-size: 1.4rem;
   }
