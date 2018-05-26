@@ -1,0 +1,52 @@
+html {
+  font-size: 1rem;
+}
+
+body > section.row > section > img {
+  /* width: 20%; */
+  margin: 3% 0;
+}
+
+#dropdownOrder {
+  background: #DA3743;
+  color: #fff;
+}
+
+#restaurants-container > li img {
+  margin: 0% 3% 1% 0%;
+  height: auto;
+  width: 45%;
+}
+
+#restaurants-container > li > div > p.restaurant-name {
+  font-weight: 600;
+  margin: 0%;
+}
+
+#restaurants-container > li> div > p.rating-stars {
+ color: #DA3743;
+ font-weight: 500;
+}
+
+#restaurants-container > li button {
+  background: #1C627A;
+  color: #fff;
+}
+
+@media (min-width: 576px){
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px){
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1200px){
+  html {
+    font-size: 1rem;
+  }
+}
