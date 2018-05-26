@@ -41,7 +41,7 @@ const paintData = (data) => {
          <p class="restaurant-name">${restaurant.name}</p>
          <p class="rating-stars">${templateStar}</p>
          <p>${restaurant.address.city}</p>
-         <button type="button" class="btn ">More...</button>
+         <button type="button" class="btn" data-toggle="modal" data-target="#restaurant-modal" data-id="${restaurant.id}">More...</button>
        </div>
      </li>`;
     $('#restaurants-container').append(templateRestaurant)
@@ -51,7 +51,6 @@ const paintData = (data) => {
 // fucntion than choose ordering
 const chooseOrder = e => {
   e.preventDefault();
-  console.log(e.target)
   if(e.target.textContent === 'A-Z'){
     descendingOrder('name')
   } else if (e.target.textContent === 'Z-A') {
@@ -80,3 +79,43 @@ const ascendingOrder = (key) => {
   })  
   paintData(restaurants)
 }
+
+$('#restaurant-modal').on('show.bs.modal', event => {
+  let button = $(event.relatedTarget);  
+  let restaurant = JSON.parse(localStorage.getItem('melp-data')).find(restaurant => {
+    return restaurant.id === button.data('id');
+  })
+
+  let templateStar = '';
+  if(restaurant.rating === 0){
+    templateStar = '0 stars';
+  } else {
+    for(var i = 0; i < restaurant.rating; i++){  
+      templateStar += `<i class="fas fa-star"></i>`
+    };
+  }
+
+  let modal = event.target;
+  modal.querySelector('#restaurant').innerText = restaurant.name;
+  modal.querySelector('.stars').innerHTML = templateStar;
+  modal.querySelector('.address').innerText = `${restaurant.address.street}, ${restaurant.address.city}, ${restaurant.address.state}` ;
+  modal.querySelector('.site').innerText = restaurant.contact.site;
+  modal.querySelector('.email').innerText = restaurant.contact.email;  
+  modal.querySelector('.phone').innerText = restaurant.contact.phone;
+
+  initMap(restaurant.address.location);
+  
+})
+
+function initMap(location) {
+  console.log(location)
+  var restaurantLocation = location;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 20,
+    center: restaurantLocation
+  });
+  var marker = new google.maps.Marker({
+    position: restaurantLocation,
+    map: map
+  });
+}  
