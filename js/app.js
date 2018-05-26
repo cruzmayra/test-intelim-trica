@@ -24,12 +24,15 @@ const paintData = (data) => {
   $('#restaurants-container').empty();
   return data.forEach(restaurant => {
     let templateRestaurant = '';
-    templateRestaurant += `<li class="list-group-item">
+    templateRestaurant += `<li class="list-group-item d-flex flex-row">
+    <img src="http://lorempixel.com/400/200/food/" alt="">
+    <div class="feature-container">  
       <p>${restaurant.name}</p>
       <p>Rating <span>${restaurant.rating}</span></p>
       <p>${restaurant.address.city}</p>
       <button type="button" class="btn btn-outline-primary">More...</button>
-    </li>`;
+    </div>
+  </li>`;
 
     $('#restaurants-container').append(templateRestaurant)
   }) 

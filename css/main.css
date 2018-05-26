@@ -1,0 +1,10 @@
+/* .feature-container {
+} */
+body > section > div > div > button {
+  margin: 0 1%;
+}
+
+#restaurants-container > li img {
+  margin-right: 3%;
+  width: 45%;
+}
