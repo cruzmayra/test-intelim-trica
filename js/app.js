@@ -21,6 +21,18 @@ const getRestaurantsData = () => {
   
 }
 
+//función que solo genera el string con el que se va a pintar en el DOM
+const paintRestaurant = (data) => {
+  // console.log(data[0])
+  let template = ''
+  template += `<li class="list-group-item d-flex flex-row"><img class="img-fluid" src="assets/images/elli-o-65548-unsplash-compressor.jpg" alt="img-menu-restaurant"><div class="feature-container"><p class="restaurant-name">${data[0].name}</p><p class="rating-stars">${data[0].rating}</p><p>${data[0].address.city}</p><button type="button" class="btn" data-toggle="modal" data-target="#restaurant-modal" data-id="${data[0].id}">More...</button></div></li>`
+return template
+}
+
+//llamando a la función que solo crea un string
+paintRestaurant(JSON.parse(localStorage.getItem('melp-data')));
+
+
 //function that paint restaurants
 const paintData = (data) => {
   $('#restaurants-container').empty();
